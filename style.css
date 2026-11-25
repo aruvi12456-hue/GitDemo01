@@ -80,3 +80,15 @@ hero {
 .card p:last-child {
   margin-bottom: 0;
 }
+.team-list {
+  padding: 0;
+  list-style: none;
+}
+
+.team-list li {
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  border-left: 4px solid #08645b;
+  border-radius: 6px;
+  background: #ffffff;
+}
