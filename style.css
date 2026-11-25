@@ -103,3 +103,12 @@ hero {
 .footer p {
   margin: 0;
 }
+@media (max-width: 650px) {
+  .hero {
+    padding: 44px 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
