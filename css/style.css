@@ -1,4 +1,5 @@
 /* ===== Reset & Variables ===== */
+
 :root {
   --primary: #0e7c86;
   --primary-dark: #095a62;
@@ -31,7 +32,7 @@ body {
   flex-direction: column;
 }
 
-/* ===== Navigation ===== */
+/* ===== Common Navigation ===== */
 
 nav,
 header {
@@ -39,6 +40,7 @@ header {
   top: 0;
   z-index: 100;
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
@@ -47,6 +49,68 @@ header {
     90deg, var(--primary-dark), var(--primary)
   );
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Navbar ===== */
+
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 70px;
+  height: auto;
+  padding: 10px 30px;
+}
+
+/* ===== Clinic Logo ===== */
+
+.navbar .clinic-logo {
+  display: block;
+  width: 180px;
+  max-width: 180px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+.navbar .clinic-logo:hover {
+  transform: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar .logo {
+  width: auto;
+  height: 36px;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* ===== Navigation Links ===== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav a,
@@ -70,75 +134,6 @@ header a.active,
 nav a[aria-current="page"] {
   background: var(--white);
   color: var(--primary-dark);
-}
-
-/* ===== Navbar & Logo ===== */
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 30px;
-  min-height: 70px;
-  height: auto;
-}
-
-.navbar .clinic-logo {
-  width: 200px;
-  height: auto;
-  margin: 0;
-  border-radius: 0;
-  box-shadow: none;
-  object-fit: contain;
-}
-
-.navbar .clinic-logo:hover {
-  transform: none;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--white);
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.navbar .logo {
-  height: 36px;
-  width: auto;
-  margin: 0;
-  box-shadow: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  background: transparent;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-}
-
-.nav-links li:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.nav-links a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
 }
 
 /* ===== Main Content ===== */
@@ -229,7 +224,9 @@ img:hover {
 ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit, minmax(230px, 1fr)
+  );
   gap: 18px;
   margin: 20px 0;
 }
@@ -253,6 +250,20 @@ ul li strong {
   color: var(--primary-dark);
   font-size: 1.05rem;
   margin-bottom: 4px;
+}
+
+/* Prevent navigation links from becoming cards */
+
+.nav-links li {
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.nav-links li:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* ===== Why Choose Us Cards ===== */
@@ -324,9 +335,14 @@ input[type="submit"] {
   border-radius: 30px;
 }
 
-/* ===== Footer ===== */
+input[type="submit"]:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== Common Footer ===== */
 
 footer {
+  width: 100%;
   margin-top: auto;
   text-align: center;
   padding: 20px;
@@ -351,6 +367,7 @@ body > p:last-child {
 /* ===== Responsive Design ===== */
 
 @media (max-width: 600px) {
+
   h1 {
     font-size: 1.8rem;
   }
@@ -359,23 +376,24 @@ body > p:last-child {
     font-size: 1.4rem;
   }
 
-  nav a,
-  header a {
-    padding: 6px 12px;
-    font-size: 0.9rem;
-  }
-
-  .navbar {
+  nav.navbar {
     padding: 10px 15px;
-    justify-content: space-between;
+    gap: 12px;
   }
 
   .navbar .clinic-logo {
     width: 140px;
+    max-width: 140px;
   }
 
   .nav-links {
     gap: 5px;
+  }
+
+  nav a,
+  header a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
   }
 
   .hero {
