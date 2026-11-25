@@ -12,4 +12,19 @@ body {
   color: #173b3b;
   background: #f4f9f8;
 }
+hero {
+  padding: 64px 20px;
+  text-align: center;
+  background: #dcefeb;
+}
 
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0 auto;
+  max-width: 540px;
+}
