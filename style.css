@@ -28,3 +28,17 @@ hero {
   margin: 0 auto;
   max-width: 540px;
 }
+.btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: #08645b;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #064c46;
+}
