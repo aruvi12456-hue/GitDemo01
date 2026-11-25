@@ -42,3 +42,21 @@ hero {
 .btn:hover {
   background: #064c46;
 }
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.container h1,
+.container h2,
+.card h3 {
+  line-height: 1.25;
+  color: #123f43;
+}
+
+.container h1,
+.card h3 {
+  margin-top: 0;
+}
