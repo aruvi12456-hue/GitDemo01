@@ -32,6 +32,7 @@ body {
 }
 
 /* ===== Navigation ===== */
+
 nav,
 header {
   position: sticky;
@@ -42,7 +43,9 @@ header {
   flex-wrap: wrap;
   gap: 8px;
   padding: 14px 20px;
-  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  background: linear-gradient(
+    90deg, var(--primary-dark), var(--primary)
+  );
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -63,12 +66,83 @@ header a:hover {
 }
 
 nav a.active,
-header a.active {
+header a.active,
+nav a[aria-current="page"] {
   background: var(--white);
   color: var(--primary-dark);
 }
 
-/* ===== Main content ===== */
+/* ===== Navbar & Logo ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  min-height: 70px;
+  height: auto;
+}
+
+.navbar .clinic-logo {
+  width: 200px;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+.navbar .clinic-logo:hover {
+  transform: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar .logo {
+  height: 36px;
+  width: auto;
+  margin: 0;
+  box-shadow: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.nav-links li:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== Main Content ===== */
+
 main,
 body > section,
 body > div {
@@ -78,7 +152,21 @@ body > div {
   padding: 30px 20px;
 }
 
+/* ===== Hero Section ===== */
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  flex: 1;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
 /* ===== Headings ===== */
+
 h1 {
   text-align: center;
   font-size: 2.4rem;
@@ -109,6 +197,10 @@ h3 {
   font-size: 1.2rem;
   color: var(--primary-dark);
   margin-bottom: 6px;
+  background: var(--accent);
+  padding: 14px 20px 8px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 2px solid var(--primary);
 }
 
 p {
@@ -117,6 +209,7 @@ p {
 }
 
 /* ===== Images ===== */
+
 img {
   display: block;
   max-width: 100%;
@@ -131,7 +224,8 @@ img:hover {
   transform: scale(1.02);
 }
 
-/* ===== Team list ===== */
+/* ===== Team List ===== */
+
 ul {
   list-style: none;
   display: grid;
@@ -161,7 +255,8 @@ ul li strong {
   margin-bottom: 4px;
 }
 
-/* ===== "Why Choose Us" cards (h3 + paragraph) ===== */
+/* ===== Why Choose Us Cards ===== */
+
 h3 + p {
   background: var(--white);
   padding: 16px 20px;
@@ -171,15 +266,10 @@ h3 + p {
   color: var(--muted);
 }
 
-h3 {
-  background: var(--accent);
-  padding: 14px 20px 8px;
-  border-radius: var(--radius) var(--radius) 0 0;
-  border-bottom: 2px solid var(--primary);
-}
+/* ===== Buttons ===== */
 
-/* ===== Buttons & forms (for the Contact page) ===== */
 a.button,
+a.btn,
 button,
 input[type="submit"] {
   display: inline-block;
@@ -196,11 +286,14 @@ input[type="submit"] {
 }
 
 a.button:hover,
+a.btn:hover,
 button:hover,
 input[type="submit"]:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
 }
+
+/* ===== Contact Forms ===== */
 
 input,
 textarea,
@@ -224,7 +317,15 @@ select:focus {
   box-shadow: 0 0 0 4px rgba(14, 124, 134, 0.15);
 }
 
+input[type="submit"] {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+}
+
 /* ===== Footer ===== */
+
 footer {
   margin-top: auto;
   text-align: center;
@@ -234,7 +335,11 @@ footer {
   font-size: 0.9rem;
 }
 
-/* If your footer is just a loose line of text, this keeps it tidy */
+footer p {
+  color: var(--white);
+  margin: 0;
+}
+
 body > p:last-child {
   margin: auto 0 0;
   padding: 20px;
@@ -243,40 +348,37 @@ body > p:last-child {
   color: var(--white);
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 32px;
-  height: 64px;
-  background: #0f172a;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-.logo { height: 36px; width: auto; }
-.nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-.nav-links a {
-  color: #cbd5e1;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color .2s;
-}
-.nav-links a:hover { color: #38bdf8; }
+/* ===== Responsive Design ===== */
 
-/* ===== Responsive ===== */
 @media (max-width: 600px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-  nav a, header a { padding: 6px 12px; font-size: 0.9rem; }
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  nav a,
+  header a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  .navbar .clinic-logo {
+    width: 140px;
+  }
+
+  .nav-links {
+    gap: 5px;
+  }
+
+  .hero {
+    padding: 50px 15px;
+  }
 }
