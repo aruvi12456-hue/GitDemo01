@@ -60,3 +60,23 @@ hero {
 .card h3 {
   margin-top: 0;
 }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #bdd6d0;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.card p {
+  margin: 0 0 8px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
