@@ -92,3 +92,14 @@ hero {
   border-radius: 6px;
   background: #ffffff;
 }
+.footer {
+  margin-top: auto;
+  padding: 16px 20px;
+  text-align: center;
+  background: #123f43;
+  color: #ffffff;
+}
+
+.footer p {
+  margin: 0;
+}
