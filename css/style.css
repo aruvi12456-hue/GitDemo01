@@ -13,3 +13,25 @@ body {
   background: #f4f9f8;
 }
 
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 16px 20px;
+  background: #123f43;
+}
+
+.navbar a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
